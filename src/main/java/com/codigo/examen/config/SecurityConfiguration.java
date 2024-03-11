@@ -33,7 +33,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(request -> request.requestMatchers("/ms-examen/v1/autenticacion/**")
                         .permitAll()
                         .requestMatchers("/ms-examen/v1/admin/**").hasAnyAuthority(Roles.ADMIN.name())
-                        .requestMatchers("/ms-examen/v1/user/**").hasAnyAuthority(Roles.USER.name())
+                        .requestMatchers("/ms-examen/v1/usuario/**").hasAnyAuthority(Roles.USER.name())
                         .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(
